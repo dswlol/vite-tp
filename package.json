@@ -1,0 +1,26 @@
+{
+  "name": "vite-tp",
+  "version": "1.0.0",
+  "description": "vite vue3模版",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dswlol/vite-tp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dswlol/vite-tp/issues"
+  },
+  "homepage": "https://github.com/dswlol/vite-tp#readme",
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^4.0.4",
+    "vite": "^4.3.9"
+  }
+}
