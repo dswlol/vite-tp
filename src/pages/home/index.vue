@@ -11,11 +11,11 @@
 <script lang="ts" setup>
 defineOptions({
 	name: 'Home',
-})
+});
 // import { ref } from 'vue';
 const textRef = ref('skss');
 const { t } = useI18n();
-const counter = createCounter()
+const counter = createCounter();
 </script>
 
 <style></style>
