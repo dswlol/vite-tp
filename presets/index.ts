@@ -7,6 +7,10 @@ import EnvTypes from 'vite-plugin-env-types';
 import Removelog from 'vite-plugin-removelog'
 import Compression from 'vite-plugin-compression'
 import Jsx from '@vitejs/plugin-vue-jsx'
+import Layouts from 'vite-plugin-vue-meta-layouts'
+import Pages from 'vite-plugin-pages' // 引入文件路由插件
+import { VueRouterAutoImports } from 'unplugin-vue-router'
+import Router from 'unplugin-vue-router/vite'
 import I18N from '@intlify/unplugin-vue-i18n/vite'
 import UnoCSS from 'unocss/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
@@ -136,6 +140,12 @@ export default function () {
 		// Warmup({
 		// 	clientFiles: ['./src/**/*'],
 		// }),
+		// https://github.com/posva/unplugin-vue-router
+		Router({
+			routesFolder: 'src/pages',
+			extensions: ['.md', '.vue', '.tsx', '.jsx'],
+			dts: 'presets/types/type-router.d.ts',
+		}),
 		// 模块自动加载
 		Modules({
 			auto: true,
@@ -144,6 +154,15 @@ export default function () {
     // vue 官方插件，用来解析 sfc
     Vue({
       include: [/\.vue$/, /\.md$/]
+		}),
+		Pages({
+			exclude: ['**/components/*.vue']  // 排除在外的目录，即所有 components 目录下的 .vue 文件都不会生成路由
+		}), // 配置文件路由插件
+		// 布局系统
+		Layouts({
+			target: 'src/layouts', // 布局目录，默认 src/layouts
+			defaultLayout: 'default', // 默认布局，默认为 default
+			importMode: 'sync' // 加载模式，支持 sync 和 async。默认为自动处理，SSG 时为 sync，非 SSG 时为 async
 		}),
 		// 调试工具
 		env.VITE_APP_DEV_TOOLS && VueDevTools(),
@@ -214,7 +233,7 @@ export default function () {
 						include: [...vue3Presets],
 						exclude: ['vue-router'],
 					}),
-					// VueRouterAutoImports,
+					VueRouterAutoImports,
 				],
 				resolvers: normalizeResolvers({
 					onlyExist: [

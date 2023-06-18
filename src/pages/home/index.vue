@@ -19,3 +19,4 @@ const counter = createCounter();
 </script>
 
 <style></style>
+<route> { meta: { layout: 'admin' } } </route>
