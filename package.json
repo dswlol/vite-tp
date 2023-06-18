@@ -7,8 +7,12 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
+		"typecheck": "npx vue-tsc --noEmit",
 		"lint": "eslint --ext .ts,.js,.jsx,.vue .",
-		"lint:fix": "eslint --fix --ext .ts,.js,.jsx,.vue ."
+		"lint:fix": "eslint --fix --ext .ts,.js,.jsx,.vue .",
+		"prepare": "npx husky install",
+		"lint-staged": "lint-staged",
+		"commitlint": "commitlint --config .commitlintrc.js -e -V"
 	},
 	"engines": {
 		"node": ">=v18.16.0"
@@ -39,6 +43,8 @@
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-vue": "^9.14.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
 		"local-pkg": "^0.4.3",
 		"nprogress": "^0.2.0",
 		"prettier": "^2.8.8",
@@ -57,5 +63,8 @@
 		"vue": "^3.3.4",
 		"vue-i18n": "^9.2.2",
 		"vue-router": "^4.2.2"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,vue}": "eslint --cache --fix"
 	}
 }

@@ -30,7 +30,7 @@
 	"explorer.fileNesting.patterns": {
 		".env": ".env.*",
 		"index.html": "LICENSE,.gitignore,README.md",
-		".eslintrc.json": ".eslint*,.prettier*,.editor*",
+		".eslintrc.json": ".eslint*,.prettier*,.editor*,.commitlintrc*",
 		"vite.config.*": "package.json,uno.config.ts,tsconfig.json,*.toml,.npmrc,renovate.json,CHANGELOG.md"
 	},
 	"[jsonc]": {
