@@ -8,6 +8,7 @@ import Removelog from 'vite-plugin-removelog'
 import Compression from 'vite-plugin-compression'
 import Jsx from '@vitejs/plugin-vue-jsx'
 import I18N from '@intlify/unplugin-vue-i18n/vite'
+import UnoCSS from 'unocss/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import { warmup as Warmup } from 'vite-plugin-warmup'
 import Modules from 'vite-plugin-use-modules'
@@ -195,7 +196,8 @@ export default function () {
 		// 生产环境下移除 console.log, console.warn, console.error
 		process.env.NODE_ENV !== 'debug' && Removelog(),
 		// 别名插件
-		Alias()
+		Alias(),
+		UnoCSS()
 	];
 
 	if (env.VITE_APP_API_AUTO_IMPORT) {
