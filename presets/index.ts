@@ -150,8 +150,8 @@ export default function () {
 		// 组件自动按需引入
 		Components({
 			directoryAsNamespace: true,
-			include: [/\.vue$/, /\.vue\?vue/, /\.[tj]sx$/, /\.md$/],
-			extensions: ['md', 'vue', 'tsx', 'jsx'],
+			include: [/\.vue$/, /\.vue\?vue/, /\.[tj]sx$/],
+			extensions: ['vue', 'tsx', 'jsx'],
 			dts: resolve(__dirname, './types/components.d.ts'),
 			types: [
 				{
@@ -212,7 +212,7 @@ export default function () {
 				imports: [
 					...AutoGenerateImports({
 						include: [...vue3Presets],
-						exclude: ['vue-router'],
+						// exclude: ['vue-router'],
 					}),
 					// VueRouterAutoImports,
 				],
