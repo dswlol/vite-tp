@@ -9,8 +9,8 @@ defineOptions({
 const router = useRouter();
 
 const jumpPage = () => {
-	router.push('/home')
-}
+	router.push('/home');
+};
 // import { ref } from 'vue';
 const textRef = ref('skss');
 const { t } = useI18n();

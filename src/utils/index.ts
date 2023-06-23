@@ -1,4 +1,3 @@
-
-export const getName = (i:any) => {
+export const getName = (i: any) => {
 	return i.trim();
-}
+};
