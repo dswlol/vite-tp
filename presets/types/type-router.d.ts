@@ -42,7 +42,6 @@ declare module 'vue-router/auto/routes' {
     '/[...notFound]': RouteRecordInfo<'/[...notFound]', '/:notFound(.*)', { notFound: ParamValue<true> }, { notFound: ParamValue<false> }>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
     '/home/': RouteRecordInfo<'/home/', '/home', Record<never, never>, Record<never, never>>,
-    '/home/components/': RouteRecordInfo<'/home/components/', '/home/components', Record<never, never>, Record<never, never>>,
   }
 }
 

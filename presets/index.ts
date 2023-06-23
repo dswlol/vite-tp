@@ -144,6 +144,7 @@ export default function () {
 		Router({
 			routesFolder: 'src/pages',
 			extensions: ['.md', '.vue', '.tsx', '.jsx'],
+			exclude: ['**/components/*.vue'],
 			dts: 'presets/types/type-router.d.ts',
 		}),
 		// 模块自动加载
@@ -169,8 +170,8 @@ export default function () {
 		// 组件自动按需引入
 		Components({
 			directoryAsNamespace: true,
-			include: [/\.vue$/, /\.vue\?vue/, /\.[tj]sx$/, /\.md$/],
-			extensions: ['md', 'vue', 'tsx', 'jsx'],
+			include: [/\.vue$/, /\.vue\?vue/, /\.[tj]sx$/],
+			extensions: ['vue', 'tsx', 'jsx'],
 			dts: resolve(__dirname, './types/components.d.ts'),
 			types: [
 				{

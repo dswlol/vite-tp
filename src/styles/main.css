@@ -1,11 +1,11 @@
 
-/* html.dark {
+html.dark {
 	background: #100c2a !important;
 }
 
 .prose {
 	scroll-behavior: smooth;
-} */
+}
 
 #nprogress {
 	pointer-events: none;
@@ -27,7 +27,7 @@
 /*
 * 全局滚动条
 */
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
 	width: 8px;
 	height: 11px;
 	background-color: rgb(246, 247, 248);
@@ -50,4 +50,4 @@ html.dark ::-webkit-scrollbar-track {
 
 html.dark ::-webkit-scrollbar-thumb {
 	background-color: #343a40;
-} */
+}
