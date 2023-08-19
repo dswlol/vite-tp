@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite';
 import Plugins from './presets/index';
+const { resolve } = require('path')
 
 export default defineConfig({
 	plugins: [Plugins()],
+	build: {
+			rollupOptions: {
+				input: {
+					main: resolve(__dirname, 'index.html'),
+					mock: resolve(__dirname, './mock/mockPage/index.html'),
+				},
+			},
+	},
 	server: {
     open: true, // 在服务器启动时自动在浏览器中打开应用程序
     //host: 'localhost',  // 指定服务器主机名
